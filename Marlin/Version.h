@@ -36,13 +36,13 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "BETA_V11.06.23"
+#define SHORT_BUILD_VERSION "E5+_V11.08.23"
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " SKR_V3, based on bugfix-2.1.x"
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " SKR_3(STM32H723VG_btt), bugfix-2.1.x"
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
@@ -65,7 +65,7 @@
  * Marlin repository.
  */
 //#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
-#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin/tree/Ender5Plus_SKR3_TFT3.5"
+#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/Ender_Five_Plus"
 
 /**
  * Default generic printer UUID.
@@ -81,7 +81,7 @@
  * The WEBSITE_URL is the location where users can get more information such as
  * documentation about a specific Marlin release.
  */
-#define WEBSITE_URL "https://github.com/Bradford1040/Marlin/tree/Ender5Plus_SKR3_TFT3.5"
+#define WEBSITE_URL "https://marlinfw.org"
 
 /**
  * Set the vendor info the serial USB interface, if changable
