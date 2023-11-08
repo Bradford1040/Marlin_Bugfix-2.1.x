@@ -1074,7 +1074,7 @@
   #define Z_STEPPER_ALIGN_ITERATIONS 20    // Number of iterations to apply during alignment
   #define Z_STEPPER_ALIGN_ACC        0.02 // Stop iterating early if the accuracy is better than this
   #define RESTORE_LEVELING_AFTER_G34      // Restore leveling after G34 is done?
-   After G34, re-home Z (G28 Z) or just calculate it from the last probe heights?
+  // After G34, re-home Z (G28 Z) or just calculate it from the last probe heights?
   // Re-homing might be more precise in reproducing the actual 'G28 Z' homing height, especially on an uneven bed.
   #define HOME_AFTER_G34
 #endif
@@ -1261,7 +1261,7 @@
 // Backlash Compensation
 // Adds extra movement to axes on direction-changes to account for backlash.
 //
-#define BACKLASH_COMPENSATION
+//#define BACKLASH_COMPENSATION
 #if ENABLED(BACKLASH_COMPENSATION)
   // Define values for backlash distance and correction.
   // If BACKLASH_GCODE is enabled these values are the defaults.
@@ -1679,7 +1679,7 @@
   #define NO_SD_AUTOSTART                 // Remove auto#.g file support completely to save some Flash, SRAM
   //#define MENU_ADDAUTOSTART               // Add a menu option to run auto#.g files
 
-  #define ONE_CLICK_PRINT                 // Prompt to print the newest file on inserted media
+  //#define ONE_CLICK_PRINT                 // Prompt to print the newest file on inserted media
   #define BROWSE_MEDIA_ON_INSERT          // Open the file browser when media is inserted
 
   #define MEDIA_MENU_AT_TOP               // Force the media menu to be listed on the top of the main menu
@@ -1700,7 +1700,7 @@
    */
   #define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define PLR_ENABLED_DEFAULT   false // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
+    #define PLR_ENABLED_DEFAULT   true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     #define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     #define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
     #define POWER_LOSS_PIN         PC15 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
@@ -1972,7 +1972,7 @@
   #define STATUS_FAN_FRAMES 4       // :[0,1,2,3,4] Number of fan animation frames
 
   // Only one STATUS_HEAT_* option can be enabled
-  #define STATUS_HEAT_PERCENT       // Show heating in a progress bar
+  //#define STATUS_HEAT_PERCENT       // Show heating in a progress bar
   #define STATUS_HEAT_POWER         // Show heater output power as a vertical bar
 
   // Frivolous Game Options
@@ -2914,7 +2914,7 @@
     #define X_HOLD_MULTIPLIER 0.5    // Enable to override 'HOLD_MULTIPLIER' for the X axis
   #endif
 
- 
+
   #if AXIS_IS_TMC_CONFIG(Y)
     #define Y_CURRENT       720
     #define Y_CURRENT_HOME  400
@@ -2943,7 +2943,7 @@
     #define Z2_MICROSTEPS   Z_MICROSTEPS
     #define Z2_RSENSE       Z_RSENSE
     #define Z2_CHAIN_POS    Z_CHAIN_POS
-    #define Z2_INTERPOLATE true    
+    #define Z2_INTERPOLATE true
 	#define Z2_HOLD_MULTIPLIER Z_HOLD_MULTIPLIER
   #endif
 
@@ -4111,7 +4111,7 @@
  * Native ESP32 board with WiFi or add-on ESP32 WiFi-101 module
  */
 #define WIFISUPPORT         // Marlin embedded WiFi management. Not needed for simple WiFi serial port.
-#define ESP3D_WIFISUPPORT   // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)
+//#define ESP3D_WIFISUPPORT   // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)
 
 /**
  * Extras for an ESP32-based motherboard with WIFISUPPORT
@@ -4119,8 +4119,8 @@
  */
 #if ENABLED(WIFISUPPORT)
   #define WEBSUPPORT          // Start a webserver (which may include auto-discovery) using SPIFFS
-  #define OTASUPPORT          // Support over-the-air firmware updates
-  #define WIFI_CUSTOM_COMMAND // Accept feature config commands (e.g., WiFi ESP3D) from the host
+  //#define OTASUPPORT          // Support over-the-air firmware updates
+  //#define WIFI_CUSTOM_COMMAND // Accept feature config commands (e.g., WiFi ESP3D) from the host
 
   /**
    * To set a default WiFi SSID / Password, create a file called Configuration_Secure.h with
@@ -4290,7 +4290,7 @@
  * When running in the debugger it will break for debugging. This is useful to help understand
  * a crash from a remote location. Requires ~400 bytes of SRAM and 5Kb of flash.
  */
-#define POSTMORTEM_DEBUGGING
+//#define POSTMORTEM_DEBUGGING
 
 /**
  * Software Reset options
@@ -4299,4 +4299,4 @@
 #define SOFT_RESET_ON_KILL            // Use a digital button to soft-reset the controller after KILL
 
 // Report uncleaned reset reason from register r2 instead of MCUSR. Supported by Optiboot on AVR.
-#define OPTIBOOT_RESET_REASON
+//#define OPTIBOOT_RESET_REASON
