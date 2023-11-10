@@ -80,7 +80,7 @@
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
 #define SERIAL_PORT 1
-#define NO_AUTO_ASSIGN_WARNING  // Disable serial warnings
+#define NO_CONFIGURATION_EMBEDDING_WARNING  // Disable serial warnings
 
 /**
  * Serial Port Baud Rate
@@ -3498,7 +3498,7 @@
 // Temperature status LEDs that display the hotend and bed temperature.
 // If all hotends, bed temperature, and target temperature are under 54C
 // then the BLUE led is on. Otherwise the RED led is on. (1C hysteresis)
-#define TEMP_STAT_LEDS
+//#define TEMP_STAT_LEDS
 
 // Support for BlinkM/CyzRgb
 //#define BLINKM
@@ -3533,13 +3533,13 @@
  */
 
 // LED Type. Enable only one of the following two options:
-//#define RGB_LED
+#define RGB_LED
 //#define RGBW_LED
 
 #if ANY(RGB_LED, RGBW_LED)
-  //#define RGB_LED_R_PIN 34
-  //#define RGB_LED_G_PIN 43
-  //#define RGB_LED_B_PIN 35
+  #define RGB_LED_R_PIN PE10 //EXP1_06_PIN
+  #define RGB_LED_G_PIN PE11 //EXP1_07_PIN
+  #define RGB_LED_B_PIN PE12 //EXP1_08_PIN
   //#define RGB_LED_W_PIN -1
 #endif
 
