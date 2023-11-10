@@ -273,9 +273,9 @@
 // Motherboard Sensor options
 //
 #if TEMP_SENSOR_BOARD
-  #define THERMAL_PROTECTION_BOARD   // Halt the printer if the board sensor leaves the temp range below.
-  #define BOARD_MINTEMP           8  // (°C)
-  #define BOARD_MAXTEMP          70  // (°C)
+  //#define THERMAL_PROTECTION_BOARD   // Halt the printer if the board sensor leaves the temp range below.
+  //#define BOARD_MINTEMP           8  // (°C)
+  //#define BOARD_MAXTEMP          70  // (°C)
   //#define TEMP_BOARD_PIN -1        // Board temp sensor pin override.
 #endif
 
@@ -283,8 +283,8 @@
 // SoC Sensor options
 //
 #if TEMP_SENSOR_SOC
-  #define THERMAL_PROTECTION_SOC     // Halt the printer if the SoC sensor leaves the temp range below.
-  #define SOC_MAXTEMP            85  // (°C)
+  //#define THERMAL_PROTECTION_SOC     // Halt the printer if the SoC sensor leaves the temp range below.
+  //#define SOC_MAXTEMP            105  // (°C)
 #endif
 
 /**
