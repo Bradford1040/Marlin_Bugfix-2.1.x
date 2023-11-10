@@ -283,8 +283,8 @@
 // SoC Sensor options
 //
 #if TEMP_SENSOR_SOC
-  //#define THERMAL_PROTECTION_SOC     // Halt the printer if the SoC sensor leaves the temp range below.
-  //#define SOC_MAXTEMP            105  // (°C)
+  #define THERMAL_PROTECTION_SOC     // Halt the printer if the SoC sensor leaves the temp range below.
+  #define SOC_MAXTEMP            105  // (°C)
 #endif
 
 /**
