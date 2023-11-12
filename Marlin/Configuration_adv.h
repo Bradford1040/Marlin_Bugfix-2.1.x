@@ -486,10 +486,10 @@
   #define AUTOTEMP_MAX          300
   #define AUTOTEMP_FACTOR       0.1f
   // Turn on AUTOTEMP on M104/M109 by default using proportions set here
-  //#define AUTOTEMP_PROPORTIONAL
+  #define AUTOTEMP_PROPORTIONAL
   #if ENABLED(AUTOTEMP_PROPORTIONAL)
     #define AUTOTEMP_MIN_P      0 // (°C) Added to the target temperature
-    #define AUTOTEMP_MAX_P      20 // (°C) Added to the target temperature
+    #define AUTOTEMP_MAX_P      30 // (°C) Added to the target temperature
     #define AUTOTEMP_FACTOR_P   1 // Apply this F parameter by default (overridden by M104/M109 F)
   #endif
 #endif
@@ -578,21 +578,21 @@
   #define CONTROLLER_FAN_PIN   PB5         // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN2_PIN -1          // Set a custom pin for second controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
-  //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
+  #define CONTROLLER_FAN_IGNORE_Z          // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
   #define CONTROLLERFAN_SPEED_ACTIVE    255 // (0-255) Active speed, used when any motor is enabled
-  #define CONTROLLERFAN_SPEED_IDLE        100 // (0-255) Idle speed, used when motors are disabled
+  #define CONTROLLERFAN_SPEED_IDLE      180 // (0-255) Idle speed, used when motors are disabled
   #define CONTROLLERFAN_IDLE_TIME        60 // (seconds) Extra time to keep the fan running after disabling motors
 
   // Use TEMP_SENSOR_BOARD as a trigger for enabling the controller fan
   //#define CONTROLLER_FAN_MIN_BOARD_TEMP 40  // (°C) Turn on the fan if the board reaches this temperature
 
   // Use TEMP_SENSOR_SOC as a trigger for enabling the controller fan
-  #define CONTROLLER_FAN_MIN_SOC_TEMP 50  // (°C) Turn on the fan if the SoC reaches this temperature
+  //#define CONTROLLER_FAN_MIN_SOC_TEMP 60  // (°C) Turn on the fan if the SoC reaches this temperature
 
-  #define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
+  //#define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
   #if ENABLED(CONTROLLER_FAN_EDITABLE)
-    #define CONTROLLER_FAN_MENU             // Enable the Controller Fan submenu
+    //#define CONTROLLER_FAN_MENU             // Enable the Controller Fan submenu
   #endif
 #endif
 
@@ -2655,7 +2655,7 @@
  *   'M106 P<fan> T2'     : Use the set secondary speed
  *   'M106 P<fan> T1'     : Restore the previous fan speed
  */
-#define EXTRA_FAN_SPEED
+//#define EXTRA_FAN_SPEED
 
 // @section gcode
 
@@ -3347,9 +3347,9 @@
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
     #define X_STALL_SENSITIVITY  100
-    #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
+    //#define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  100
-    #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
+    //#define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
@@ -3400,7 +3400,7 @@
    *   stepperY.intpol(0); \
    * }
    */
-  #define TMC_ADV() {  }
+  //#define TMC_ADV() {  }
 
 #endif // HAS_TRINAMIC_CONFIG || HAS_TMC26X
 
@@ -3442,7 +3442,7 @@
 
 //#define EXPERIMENTAL_I2CBUS
 #if ENABLED(EXPERIMENTAL_I2CBUS)
-  #define I2C_SLAVE_ADDRESS  0  // Set a value from 8 to 127 to act as a slave
+  //#define I2C_SLAVE_ADDRESS  0  // Set a value from 8 to 127 to act as a slave
 #endif
 
 // @section photo
@@ -3544,7 +3544,7 @@
    *  - RPM     (S0 - S50000)  Best for use with a spindle
    *  - SERVO   (S0 - S180)
    */
-  #define CUTTER_POWER_UNIT PWM255
+  //#define CUTTER_POWER_UNIT PWM255
 
   /**
    * Relative Cutter Power
@@ -3892,13 +3892,13 @@
  * Note that G0 feedrates should be used with care for 3D printing (if used at all).
  * High feedrates may cause ringing and harm print quality.
  */
-#define PAREN_COMMENTS      // Support for parentheses-delimited comments
-#define GCODE_MOTION_MODES  // Remember the motion mode (G0 G1 G2 G3 G5 G38.X) and apply for X Y Z E F, etc.
+//#define PAREN_COMMENTS      // Support for parentheses-delimited comments
+//#define GCODE_MOTION_MODES  // Remember the motion mode (G0 G1 G2 G3 G5 G38.X) and apply for X Y Z E F, etc.
 
 // Enable and set a (default) feedrate for all G0 moves
-#define G0_FEEDRATE 3000 // (mm/min)
+//#define G0_FEEDRATE 3000 // (mm/min)
 #ifdef G0_FEEDRATE
-  #define VARIABLE_G0_FEEDRATE // The G0 feedrate is set by F in G0 motion mode
+  //#define VARIABLE_G0_FEEDRATE // The G0 feedrate is set by F in G0 motion mode
 #endif
 
 // @section gcode
@@ -3908,7 +3908,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-#define STARTUP_COMMANDS "M17 X Y Z\nM209\nM500\nG28 X Y Z\nG1 Z50"
+#define STARTUP_COMMANDS "M17 X Y Z\nG28 X Y Z\nG1 Z50"
 
 /**
  * G-code Macros
@@ -4137,7 +4137,7 @@
    * this setting determines the minimum update time between checks. A value of 100 works well with
    * error rolling average when attempting to correct only for skips and not for vibration.
    */
-  #define I2CPE_MIN_UPD_TIME_MS     4                       // (ms) Minimum time between encoder checks.
+  #define I2CPE_MIN_UPD_TIME_MS     80                       // (ms) Minimum time between encoder checks.
 
   // Use a rolling average to identify persistent errors that indicate skips, as opposed to vibration and noise.
   #define I2CPE_ERR_ROLLING_AVERAGE
@@ -4315,22 +4315,22 @@
   //#define MMU2_MODE_12V
 
   // G-code to execute when MMU2 F.I.N.D.A. probe detects filament runout
-  #define MMU2_FILAMENT_RUNOUT_SCRIPT "M600"
+  //#define MMU2_FILAMENT_RUNOUT_SCRIPT "M600"
 
   // Add an LCD menu for MMU2
   //#define MMU2_MENUS
 
   // Settings for filament load / unload from the LCD menu.
   // This is for Průša MK3-style extruders. Customize for your hardware.
-  #define MMU2_FILAMENTCHANGE_EJECT_FEED 80.0
-  #define MMU2_LOAD_TO_NOZZLE_SEQUENCE \
+  //#define MMU2_FILAMENTCHANGE_EJECT_FEED 80.0
+  //#define MMU2_LOAD_TO_NOZZLE_SEQUENCE \
     {  7.2, 1145 }, \
     { 14.4,  871 }, \
     { 36.0, 1393 }, \
     { 14.4,  871 }, \
     { 50.0,  198 }
 
-  #define MMU2_RAMMING_SEQUENCE \
+  //#define MMU2_RAMMING_SEQUENCE \
     {   1.0, 1000 }, \
     {   1.0, 1500 }, \
     {   2.0, 2000 }, \
