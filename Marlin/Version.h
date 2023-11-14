@@ -57,7 +57,7 @@
  * Marlin repository.
  */
 //#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
-#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/Ender_Five_Plus"
+#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E5+11.15.2023"
 
 /**
  * Default generic printer UUID.
