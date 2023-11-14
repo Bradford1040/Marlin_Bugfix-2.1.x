@@ -573,12 +573,12 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  //#define CONTROLLER_FAN_PIN -1           // Set a custom pin for the controller fan
+  #define CONTROLLER_FAN_PIN PB6           // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN2_PIN -1          // Set a custom pin for second controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
-  //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
+  #define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
   #define CONTROLLERFAN_SPEED_ACTIVE    255 // (0-255) Active speed, used when any motor is enabled
   #define CONTROLLERFAN_SPEED_IDLE        0 // (0-255) Idle speed, used when motors are disabled
@@ -588,9 +588,9 @@
   //#define CONTROLLER_FAN_MIN_BOARD_TEMP 40  // (°C) Turn on the fan if the board reaches this temperature
 
   // Use TEMP_SENSOR_SOC as a trigger for enabling the controller fan
-  //#define CONTROLLER_FAN_MIN_SOC_TEMP 40  // (°C) Turn on the fan if the SoC reaches this temperature
+  #define CONTROLLER_FAN_MIN_SOC_TEMP 50  // (°C) Turn on the fan if the SoC reaches this temperature
 
-  //#define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
+  #define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
   #if ENABLED(CONTROLLER_FAN_EDITABLE)
     #define CONTROLLER_FAN_MENU             // Enable the Controller Fan submenu
   #endif
@@ -664,9 +664,9 @@
 /**
  * Assign more PWM fans for part cooling, synchronized with Fan 0
  */
-#define REDUNDANT_PART_COOLING_FAN 1  // Index of the first fan to synchronize with Fan 0
+//#define REDUNDANT_PART_COOLING_FAN 1  // Index of the first fan to synchronize with Fan 0
 #ifdef REDUNDANT_PART_COOLING_FAN
-  #define NUM_REDUNDANT_FANS 1        // Number of sequential fans to synchronize with Fan 0
+ //#define NUM_REDUNDANT_FANS 1        // Number of sequential fans to synchronize with Fan 0
 #endif
 
 /**
@@ -683,21 +683,21 @@
  */
 #define E0_AUTO_FAN_PIN PB5
 #define E1_AUTO_FAN_PIN -1
-#define E2_AUTO_FAN_PIN -1
-#define E3_AUTO_FAN_PIN -1
-#define E4_AUTO_FAN_PIN -1
-#define E5_AUTO_FAN_PIN -1
-#define E6_AUTO_FAN_PIN -1
-#define E7_AUTO_FAN_PIN -1
-#define CHAMBER_AUTO_FAN_PIN -1
-#define COOLER_AUTO_FAN_PIN -1
+//#define E2_AUTO_FAN_PIN -1
+//#define E3_AUTO_FAN_PIN -1
+//#define E4_AUTO_FAN_PIN -1
+//#define E5_AUTO_FAN_PIN -1
+//#define E6_AUTO_FAN_PIN -1
+//#define E7_AUTO_FAN_PIN -1
+//#define CHAMBER_AUTO_FAN_PIN -1
+//#define COOLER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
 #define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
-#define CHAMBER_AUTO_FAN_TEMPERATURE 30
-#define CHAMBER_AUTO_FAN_SPEED 255
-#define COOLER_AUTO_FAN_TEMPERATURE 18
-#define COOLER_AUTO_FAN_SPEED 255
+//#define CHAMBER_AUTO_FAN_TEMPERATURE 30
+//#define CHAMBER_AUTO_FAN_SPEED 255
+//#define COOLER_AUTO_FAN_TEMPERATURE 18
+//#define COOLER_AUTO_FAN_SPEED 255
 
 /**
  * Hotend Cooling Fans tachometers
@@ -1220,17 +1220,17 @@
  * Enable DISABLE_IDLE_* to shut down axis steppers after an idle period.
  * The default timeout duration can be overridden with M18 and M84. Set to 0 for No Timeout.
  */
-#define DEFAULT_STEPPER_TIMEOUT_SEC 720
-#define DISABLE_IDLE_X
-#define DISABLE_IDLE_Y
-//#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
+#define DEFAULT_STEPPER_TIMEOUT_SEC 360
+//#define DISABLE_IDLE_X
+//#define DISABLE_IDLE_Y
+#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
 //#define DISABLE_IDLE_I
 //#define DISABLE_IDLE_J
 //#define DISABLE_IDLE_K
 //#define DISABLE_IDLE_U
 //#define DISABLE_IDLE_V
 //#define DISABLE_IDLE_W
-#define DISABLE_IDLE_E    // Shut down all idle extruders
+//#define DISABLE_IDLE_E    // Shut down all idle extruders
 
 // Default Minimum Feedrates for printing and travel moves
 #define DEFAULT_MINIMUMFEEDRATE       5.0     // (mm/s. °/s for rotational-only moves) Minimum feedrate. Set with M205 S.
