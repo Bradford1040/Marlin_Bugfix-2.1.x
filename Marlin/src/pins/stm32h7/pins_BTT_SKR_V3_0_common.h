@@ -278,13 +278,13 @@
    * Hardware serial communication ports.
    * If undefined software serial is used according to the pins below
    */
-  //#define X_HARDWARE_SERIAL  Serial1
+  //#define X_HARDWARE_SERIAL  MSerial1  //Hammer
   //#define X2_HARDWARE_SERIAL Serial1
-  //#define Y_HARDWARE_SERIAL  Serial1
+  //#define Y_HARDWARE_SERIAL  MSerial3  //Hammer
   //#define Y2_HARDWARE_SERIAL Serial1
-  //#define Z_HARDWARE_SERIAL  Serial1
-  //#define Z2_HARDWARE_SERIAL Serial1
-  //#define E0_HARDWARE_SERIAL Serial1
+  //#define Z_HARDWARE_SERIAL  MSerial1  //Hammer
+  //#define Z2_HARDWARE_SERIAL MSerial3  //Hammer
+  //#define E0_HARDWARE_SERIAL MSerial1  //Hammer
   //#define E1_HARDWARE_SERIAL Serial1
   //#define E2_HARDWARE_SERIAL Serial1
   //#define E3_HARDWARE_SERIAL Serial1
@@ -310,7 +310,7 @@
 
   // Reduce baud rate to improve software serial reliability
   #ifndef TMC_BAUD_RATE
-    #define TMC_BAUD_RATE                  19200
+    #define TMC_BAUD_RATE                  115200
   #endif
 
 #endif // HAS_TMC_UART
