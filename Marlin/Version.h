@@ -28,7 +28,7 @@
 
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "E5+_V11.15.23"
+#define SHORT_BUILD_VERSION "E5+_V11.21.23"
 
 /**
  * Verbose version identifier which should contain a reference to the location
