@@ -2078,7 +2078,7 @@
    * - When used with the "new" panel, folder names will also have '.gcode' appended to their names.
    *   This hack is currently required to force the panel to show folders.
    */
-  //#define AC_SD_FOLDER_VIEW
+  #define AC_SD_FOLDER_VIEW
 #endif
 
 //
@@ -2214,7 +2214,7 @@
  */
 #define USE_WATCHDOG
 #if ENABLED(USE_WATCHDOG)
-  //#define WATCHDOG_RESET_MANUAL
+  #define WATCHDOG_RESET_MANUAL
 #endif
 
 // @section lcd
@@ -2944,7 +2944,7 @@
 
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       600
+    #define Z_CURRENT       650
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     64
     #define Z_RSENSE          0.11
@@ -3162,8 +3162,8 @@
   //#define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   //#define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       5
-  #define Z2_HYBRID_THRESHOLD      5
+  #define Z_HYBRID_THRESHOLD       15
+  #define Z2_HYBRID_THRESHOLD      15
   //#define Z3_HYBRID_THRESHOLD      3
   //#define Z4_HYBRID_THRESHOLD      3
   //#define I_HYBRID_THRESHOLD       3  // [linear=mm/s, rotational=°/s]
@@ -3172,7 +3172,7 @@
   //#define U_HYBRID_THRESHOLD       3  // [mm/s]
  // #define V_HYBRID_THRESHOLD       3
  // #define W_HYBRID_THRESHOLD       3
-  #define E0_HYBRID_THRESHOLD     50
+  #define E0_HYBRID_THRESHOLD      10
  // #define E1_HYBRID_THRESHOLD     30
   //#define E2_HYBRID_THRESHOLD     30
   //#define E3_HYBRID_THRESHOLD     30
@@ -3226,7 +3226,7 @@
     //#define V_STALL_SENSITIVITY  8
     //#define W_STALL_SENSITIVITY  8
     //#define SPI_ENDSTOPS              // TMC2130/TMC5160 only
-    #define IMPROVE_HOMING_RELIABILITY
+    //#define IMPROVE_HOMING_RELIABILITY
   #endif
 
   // @section tmc/config
