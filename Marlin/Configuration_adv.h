@@ -1224,7 +1224,7 @@
 #define DEFAULT_STEPPER_TIMEOUT_SEC 360
 #define DISABLE_IDLE_X
 #define DISABLE_IDLE_Y
-//#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part! Comment to disable timeouts 
+//#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part! Comment to disable timeouts
 //#define DISABLE_IDLE_I
 //#define DISABLE_IDLE_J
 //#define DISABLE_IDLE_K
@@ -2464,6 +2464,7 @@
   #define N_ARC_CORRECTION       25   // Number of interpolated segments between corrections
   #define ARC_P_CIRCLES             // Enable the 'P' parameter to specify complete circles
   #define SF_ARC_FIX                // Enable only if using SkeinForge with "Arc Point" fillet procedure
+  #define CNC_WORKSPACE_PLANES    // Allow G2/G3 to operate in XY, ZX, or YZ planes
 #endif
 
 // G5 Bézier Curve Support with XYZE destination and IJPQ offsets
