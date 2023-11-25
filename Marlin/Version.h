@@ -28,13 +28,13 @@
 
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "E5+_V11.24.23"
+#define SHORT_BUILD_VERSION "E3v2_V11.24.23"
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " SKR_3(STM32H723VG_btt), bugfix-2.1.x"
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " SKR_3_EZ(STM32H723VG_btt), bugfix-2.1.x"
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
@@ -48,7 +48,7 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "Ender5+"
+#define MACHINE_NAME "Ender3V2"
 //#define CUSTOM_MACHINE_NAME "Ender5+_Punisher" //Listed in Configuration.h
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
@@ -57,7 +57,7 @@
  * Marlin repository.
  */
 //#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
-#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E5+11.24.2023"
+#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E3v2_11.24.2023"
 
 /**
  * Default generic printer UUID.
@@ -65,9 +65,9 @@
 //#define DEFAULT_MACHINE_UUID "cede2a2f-41a2-4748-9b12-c55c62f367ff"
 /**
  * Hammers generic printer UUID
- * For Ender 5 Plus
+ * For Ender 5 Plus or 3v2
  */
-//#define   DEFAULT_MACHINE_UUID "6db1c193-dd5a-4e84-9d89-88cea6471af8"
+//#define   DEFAULT_MACHINE_UUID "in-case-I-want-to-move-uuid"
 
 /**
  * The WEBSITE_URL is the location where users can get more information such as
