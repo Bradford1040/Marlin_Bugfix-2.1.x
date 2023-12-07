@@ -49,7 +49,7 @@
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
 #define MACHINE_NAME "Ender3V2"
-//#define CUSTOM_MACHINE_NAME "Ender5+_Punisher" //Listed in Configuration.h
+//#define CUSTOM_MACHINE_NAME "ABLE!" //Listed in Configuration.h
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
  * Code which is installed on the device. In most cases —unless the manufacturer
