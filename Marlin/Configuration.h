@@ -968,6 +968,8 @@
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
   //#define DELTA_DIAGONAL_ROD_TRIM_TOWER { 0.0, 0.0, 0.0 }
 #endif
+/**Added for BIUQ MicroProbe V2 = "true",  MicroProbe V1 = "false"*/
+//#define Z_MIN_ENDSTOP_INVERTING true
 
 // @section scara
 
@@ -1132,7 +1134,7 @@
   //#define ENDSTOPPULLUP_UMAX
   //#define ENDSTOPPULLUP_VMAX
   //#define ENDSTOPPULLUP_WMAX
-  //#define ENDSTOPPULLUP_ZMIN_PROBE
+  //#define ENDSTOPPULLUP_ZMIN_PROBE  // Enable pull ups for MicroProbe V2
 #endif
 
 // Enable pulldown for all endstops to prevent a floating state
@@ -1355,7 +1357,7 @@
  *    - Normally-closed (NC) also connect to GND.
  *    - Normally-open (NO) also connect to 5V.
  */
-//#define Z_MIN_PROBE_PIN -1
+#define Z_MIN_PROBE_PIN PC13 // pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1369,13 +1371,13 @@
  * Use G29 repeatedly, adjusting the Z height at each point with movement commands
  * or (with LCD_BED_LEVELING) the LCD controller.
  */
-//#define PROBE_MANUALLY
+//#define PROBE_MANUALLY //Can be used in all AutoBed Leveling, Except UBL.
 
 /**
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-//#define FIX_MOUNTED_PROBE
+//#define FIX_MOUNTED_PROBE // Enable for MicroProbe V2
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1397,7 +1399,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH
+#define BLTOUCH  // Disable for MicroProbe V2
 
 /**
  * MagLev V4 probe by MDD
