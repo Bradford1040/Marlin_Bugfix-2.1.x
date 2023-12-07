@@ -28,7 +28,7 @@
 
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "E3v2_V11.24.23"
+#define SHORT_BUILD_VERSION "E3V2.12.07.23"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -57,7 +57,7 @@
  * Marlin repository.
  */
 //#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
-#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E3v2_11.24.2023"
+#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E3V2.12.07.2023"
 
 /**
  * Default generic printer UUID.
