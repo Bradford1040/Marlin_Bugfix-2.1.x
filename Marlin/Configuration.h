@@ -970,7 +970,7 @@
 #endif
 
 /**Added for BIUQ MicroProbe V2 = "true",  MicroProbe V1 = "false"*/
-//#define Z_MIN_ENDSTOP_INVERTING true
+//#define Z_MIN_ENDSTOP_INVERTING true //replaced at line 1187~89
 // @section scara
 
 /**
