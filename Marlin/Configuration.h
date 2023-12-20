@@ -896,8 +896,16 @@
 //#define COREYX
 //#define COREZX
 //#define COREZY
-//#define MARKFORGED_XY  // MarkForged. See https://reprap.org/forum/read.php?152,504042
+
+//
+// MarkForged Kinematics
+// See https://reprap.org/forum/read.php?152,504042
+//
+//#define MARKFORGED_XY
 //#define MARKFORGED_YX
+#if ANY(MARKFORGED_XY, MARKFORGED_YX)
+  //#define MARKFORGED_INVERSE  // Enable for an inverted Markforged kinematics belt path
+#endif
 
 // Enable for a belt style printer with endless "Z" motion
 //#define BELTPRINTER
@@ -2359,8 +2367,8 @@
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
-  //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
-  #define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
+  #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+  //#define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
 #endif
 
 // @section host

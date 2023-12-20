@@ -29,7 +29,7 @@
  * Marlin release version identifier
  */
 //#define SHORT_BUILD_VERSION "bugfix-2.1.x"
-#define SHORT_BUILD_VERSION "E5+_V12.09.23"
+#define SHORT_BUILD_VERSION "E5+_V12.20.23"
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
@@ -57,7 +57,7 @@
  * Marlin repository.
  */
 //#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
-#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E5+_12.09.23"
+#define SOURCE_CODE_URL "https://github.com/Bradford1040/Marlin_Bugfix-2.1.x/tree/E5+_12.20.23"
 /**
  * Default generic printer UUID.
  */
