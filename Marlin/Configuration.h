@@ -1239,7 +1239,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 600, 600, 17, 60 }
+#define DEFAULT_MAX_FEEDRATE          { 900, 900, 17, 200 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1252,7 +1252,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 1500 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 200, 6500 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1281,8 +1281,8 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 15.0
-  #define DEFAULT_YJERK 15.0
+  #define DEFAULT_XJERK 17.0
+  #define DEFAULT_YJERK 17.0
   #define DEFAULT_ZJERK  0.3
   #define DEFAULT_Z2_JERK 0.3
   //#define DEFAULT_IJERK  0.3
@@ -1357,7 +1357,7 @@
  *    - Normally-closed (NC) also connect to GND.
  *    - Normally-open (NO) also connect to 5V.
  */
-#define Z_MIN_PROBE_PIN PC13 // pin 32 is the RAMPS default
+//#define Z_MIN_PROBE_PIN PC13 // pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1563,10 +1563,10 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -2, -57, -3.3039 }
+#define NOZZLE_TO_PROBE_OFFSET { -2, -57, -2.4389 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
-#define PROBING_TOOL 0
+//#define PROBING_TOOL 0
 #ifdef PROBING_TOOL
   //#define PROBE_TOOLCHANGE_NO_MOVE  // Suppress motion on probe tool-change
 #endif
@@ -1615,9 +1615,9 @@
  * Probe Enable / Disable
  * The probe only provides a triggered signal when enabled.
  */
-#define PROBE_ENABLE_DISABLE
+//#define PROBE_ENABLE_DISABLE
 #if ENABLED(PROBE_ENABLE_DISABLE)
-  #define PROBE_ENABLE_PIN PE5   // Override the default pin here
+  //#define PROBE_ENABLE_PIN PE5   // Override the default pin here
 #endif
 
 /**

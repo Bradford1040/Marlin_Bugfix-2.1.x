@@ -29,7 +29,7 @@
  * Marlin release version identifier
  */
 //#define SHORT_BUILD_VERSION "bugfix-2.1.x"
-#define SHORT_BUILD_VERSION "E5+_V12.09.23"
+#define SHORT_BUILD_VERSION "RollBack version"
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
