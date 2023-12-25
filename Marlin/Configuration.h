@@ -1571,7 +1571,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -2, -57, -2.4389 }
+#define NOZZLE_TO_PROBE_OFFSET { -2, -57, -1.6289 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1663,10 +1663,10 @@
 #define Z_PROBE_LOW_POINT          -3 // (mm) Farthest distance below the trigger-point to go before stopping
 
 // For M851 provide ranges for adjusting the X, Y, and Z probe offsets
-#define PROBE_OFFSET_XMIN -60   // (mm)
-#define PROBE_OFFSET_XMAX  60   // (mm)
+#define PROBE_OFFSET_XMIN -20   // (mm)
+#define PROBE_OFFSET_XMAX  20   // (mm)
 #define PROBE_OFFSET_YMIN -60   // (mm)
-#define PROBE_OFFSET_YMAX  60   // (mm)
+#define PROBE_OFFSET_YMAX  20   // (mm)
 #define PROBE_OFFSET_ZMIN -20   // (mm)
 #define PROBE_OFFSET_ZMAX  20   // (mm)
 
@@ -2070,7 +2070,7 @@
  * Turn on with the command 'M111 S32'.
  * NOTE: Requires a lot of PROGMEM!
  */
-//#define DEBUG_LEVELING_FEATURE
+#define DEBUG_LEVELING_FEATURE
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL, PROBE_MANUALLY)
   // Set a height for the start of manual adjustment
