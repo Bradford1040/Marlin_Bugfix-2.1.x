@@ -3293,7 +3293,7 @@
    *
    * Values from 0..1023, -1 to disable homing phase for that axis.
    */
-   #define TMC_HOME_PHASE { 896, 896, 896 }
+   #define TMC_HOME_PHASE { 896, 896, -1 }
 
   /**
    * Step on both rising and falling edge signals (as with a square wave).
@@ -3824,7 +3824,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-#define STARTUP_COMMANDS "M17 X Y Z\nG28 X Y Z"
+#define STARTUP_COMMANDS "M17 X Y Z\n G28 X Y Z"
 
 /**
  * G-code Macros
