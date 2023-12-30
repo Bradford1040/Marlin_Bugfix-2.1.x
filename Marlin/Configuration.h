@@ -1118,7 +1118,7 @@
 // @section endstops
 
 // Enable pullup for all endstops to prevent a floating state
-#define ENDSTOPPULLUPS
+//#define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
   //#define ENDSTOPPULLUP_XMIN
@@ -1139,7 +1139,7 @@
   //#define ENDSTOPPULLUP_UMAX
   //#define ENDSTOPPULLUP_VMAX
   //#define ENDSTOPPULLUP_WMAX
-  #define ENDSTOPPULLUP_ZMIN_PROBE  // Enable pull ups for MicroProbe V2
+  //#define ENDSTOPPULLUP_ZMIN_PROBE  // Enable pull ups for MicroProbe V2
 #endif
 
 // Enable pulldown for all endstops to prevent a floating state
@@ -1175,7 +1175,7 @@
 #define X_MAX_ENDSTOP_HIT_STATE HIGH
 #define Y_MIN_ENDSTOP_HIT_STATE HIGH
 #define Y_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_ENDSTOP_HIT_STATE LOW //MicroprobeV2 change to LOW
+#define Z_MIN_ENDSTOP_HIT_STATE HIGH //MicroprobeV2 change to LOW
 #define Z_MAX_ENDSTOP_HIT_STATE HIGH
 #define I_MIN_ENDSTOP_HIT_STATE HIGH
 #define I_MAX_ENDSTOP_HIT_STATE HIGH
@@ -1189,7 +1189,7 @@
 #define V_MAX_ENDSTOP_HIT_STATE HIGH
 #define W_MIN_ENDSTOP_HIT_STATE HIGH
 #define W_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW  //MicroprobeV2 change to LOW
+#define Z_MIN_PROBE_ENDSTOP_HIT_STATE HIGH  //MicroprobeV2 change to LOW
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
@@ -1381,7 +1381,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-#define FIX_MOUNTED_PROBE // Enable for MicroProbe V2
+//#define FIX_MOUNTED_PROBE // Enable for MicroProbe V2
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1403,7 +1403,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH  // Disable for MicroProbe V2
+#define BLTOUCH  // Disable for MicroProbe V2
 
 /**
  * MagLev V4 probe by MDD
@@ -1595,8 +1595,8 @@
  */
 //#define PROBE_ACTIVATION_SWITCH
 #if ENABLED(PROBE_ACTIVATION_SWITCH)
-  #define PROBE_ACTIVATION_SWITCH_STATE LOW // State indicating probe is active
-  //#define PROBE_ACTIVATION_SWITCH_PIN PC6 // Override default pin
+  //#define PROBE_ACTIVATION_SWITCH_STATE LOW // State indicating probe is active
+  //#define PROBE_ACTIVATION_SWITCH_PIN PE5 // Override default pin
 #endif
 
 /**
