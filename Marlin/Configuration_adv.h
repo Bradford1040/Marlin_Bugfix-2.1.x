@@ -327,7 +327,7 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-  #define WATCH_TEMP_PERIOD  40               // (seconds)
+  #define WATCH_TEMP_PERIOD  60               // (seconds)
   #define WATCH_TEMP_INCREASE 2               // (°C)
 #endif
 
@@ -341,7 +341,7 @@
   /**
    * As described above, except for the bed (M140/M190/M303).
    */
-  #define WATCH_BED_TEMP_PERIOD                60 // (seconds)
+  #define WATCH_BED_TEMP_PERIOD                90 // (seconds)
   #define WATCH_BED_TEMP_INCREASE               2 // (°C)
 #endif
 
@@ -516,7 +516,7 @@
 
 // The number of consecutive low temperature errors that can occur
 // before a MINTEMP error is triggered. (Shouldn't be more than 10.)
-//#define MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED 0
+#define MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED 4
 
 /**
  * The number of milliseconds a hotend will preheat before starting to check
@@ -1222,16 +1222,16 @@
  * The default timeout duration can be overridden with M18 and M84. Set to 0 for No Timeout.
  */
 #define DEFAULT_STEPPER_TIMEOUT_SEC 360
-//#define DISABLE_IDLE_X
-//#define DISABLE_IDLE_Y
-#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
+#define DISABLE_IDLE_X
+#define DISABLE_IDLE_Y
+//#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
 //#define DISABLE_IDLE_I
 //#define DISABLE_IDLE_J
 //#define DISABLE_IDLE_K
 //#define DISABLE_IDLE_U
 //#define DISABLE_IDLE_V
 //#define DISABLE_IDLE_W
-//#define DISABLE_IDLE_E    // Shut down all idle extruders
+#define DISABLE_IDLE_E    // Shut down all idle extruders
 
 // Default Minimum Feedrates for printing and travel moves
 #define DEFAULT_MINIMUMFEEDRATE       5.0     // (mm/s. °/s for rotational-only moves) Minimum feedrate. Set with M205 S.
@@ -1566,7 +1566,7 @@
   #define SOUND_ON_DEFAULT    // Buzzer/speaker default enabled state
 
   // The timeout to return to the status screen from sub-menus
-  #define LCD_TIMEOUT_TO_STATUS 15000   // (ms)
+  #define LCD_TIMEOUT_TO_STATUS 5000   // (ms)
 
   // Scroll a longer status message into view
   #define STATUS_MESSAGE_SCROLLING
@@ -1619,7 +1619,7 @@
  #define SET_INTERACTION_TIME          // Add 'C' parameter to set time until next filament change or other user interaction
   #define M73_REPORT                    // Report M73 values to host
   #if ALL(M73_REPORT, HAS_MEDIA)
-    //#define M73_REPORT_SD_ONLY            // Report only when printing from SD
+    #define M73_REPORT_SD_ONLY            // Report only when printing from SD
   #endif
 #endif
 
@@ -2261,9 +2261,9 @@
 #define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   #if ENABLED(DISTINCT_E_FACTORS)
-    #define ADVANCE_K { 0.12 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
+    #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 0.12        // (mm) Compression length applying to all extruders
+    #define ADVANCE_K 0.22        // (mm) Compression length applying to all extruders
   #endif
   #define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
@@ -2797,7 +2797,7 @@
    * Position to park head during tool change.
    * Doesn't apply to SWITCHING_TOOLHEAD, DUAL_X_CARRIAGE, or PARKING_EXTRUDER
    */
-  #define TOOLCHANGE_PARK
+  //#define TOOLCHANGE_PARK
   #if ENABLED(TOOLCHANGE_PARK)
     #define TOOLCHANGE_PARK_XY    { X_MIN_POS + 10, Y_MIN_POS + 30 }
     #define TOOLCHANGE_PARK_XY_FEEDRATE 6000  // (mm/min)
@@ -2906,7 +2906,7 @@
   #define INTERPOLATE      true
 
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       700        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       750        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  400  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     32        // 0..256
     #define X_RSENSE          0.11     // Multiplied x1000 for TMC26X
@@ -2917,7 +2917,7 @@
 
 
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       720
+    #define Y_CURRENT       750
     #define Y_CURRENT_HOME  400
     #define Y_MICROSTEPS     32
     #define Y_RSENSE          0.11
@@ -2929,7 +2929,7 @@
 
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       600
+    #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     64
     #define Z_RSENSE          0.11
@@ -2949,8 +2949,8 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      650
-    #define E0_MICROSTEPS    32
+    #define E0_CURRENT      850
+    #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
     #define E0_INTERPOLATE true
@@ -3157,7 +3157,7 @@
   //#define U_HYBRID_THRESHOLD       3  // [mm/s]
  // #define V_HYBRID_THRESHOLD       3
  // #define W_HYBRID_THRESHOLD       3
-  #define E0_HYBRID_THRESHOLD     50
+  #define E0_HYBRID_THRESHOLD     30
  // #define E1_HYBRID_THRESHOLD     30
   //#define E2_HYBRID_THRESHOLD     30
   //#define E3_HYBRID_THRESHOLD     30
@@ -3196,7 +3196,7 @@
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  100
+    #define X_STALL_SENSITIVITY  110
     //#define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  145
     //#define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
@@ -3226,7 +3226,7 @@
    *
    * Values from 0..1023, -1 to disable homing phase for that axis.
    */
-   #define TMC_HOME_PHASE { 896, 896, 896 }
+   #define TMC_HOME_PHASE { 896, 896, -1 }
 
   /**
    * Step on both rising and falling edge signals (as with a square wave).
@@ -3757,7 +3757,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-#define STARTUP_COMMANDS "M17 X Y Z\nG28 X  Y Z\nG1 Z350"
+#define STARTUP_COMMANDS "M17 X Y Z\nG28 X Y Z"
 
 /**
  * G-code Macros
