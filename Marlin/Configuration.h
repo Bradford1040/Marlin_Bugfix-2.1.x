@@ -1357,7 +1357,7 @@
  *    - Normally-closed (NC) also connect to GND.
  *    - Normally-open (NO) also connect to 5V.
  */
-#define Z_MIN_PROBE_PIN PC13 // pin 32 is the RAMPS default
+#define Z_MIN_PROBE_PIN PC0 // pin 32 is the RAMPS default
 
 /**
  * Probe Type
