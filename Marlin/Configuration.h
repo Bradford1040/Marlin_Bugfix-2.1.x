@@ -63,6 +63,7 @@
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(Hammer)" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
+#define NO_AUTO_ASSIGN_WARNING
 
 // @section machine
 
@@ -162,7 +163,7 @@
 //#define E6_DRIVER_TYPE A4988
 //#define E7_DRIVER_TYPE A4988
 
-#define NO_AUTO_ASSIGN_WARNING  // No warning about auto-assign Z2 to E1 stepper driver
+#define NO_CONFIGURATION_EMBEDDING_WARNING  // No warning about mc.zip file
 
 /**
  * Additional Axis Settings
