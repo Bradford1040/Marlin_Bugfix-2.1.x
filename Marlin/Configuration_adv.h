@@ -1029,7 +1029,7 @@
    * Override with 'M422 S<index> X<pos> Y<pos>'.
    */
   //#define Z_STEPPER_ALIGN_XY { {  10, 235 }, { 185,  235 }, { 362, 235 } }
-  #define Z_STEPPER_ALIGN_XY { {  10, 235 }, { 362, 235 } }
+  #define Z_STEPPER_ALIGN_XY { {  8, 178 }, { 360, 178 } }
 
   /**
    * Orientation for the automatically-calculated probe positions.
